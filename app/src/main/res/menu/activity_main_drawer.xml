@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view"
+    >
+    <group android:checkableBehavior="single"
+        android:id="@+id/g1">
+        <item
+            android:title="الرئيسية"
+            android:id="@+id/home1"
+            android:icon="@drawable/home"
+
+
+            />
+    </group>
+    <group android:checkableBehavior="single"
+        android:id="@+id/g12">
+
+        <item
+            android:id="@+id/about1"
+            android:icon="@drawable/about"
+            android:title="من نحن"
+            />
+    </group>
+    <group android:checkableBehavior="single"
+        android:id="@+id/g3">
+
+        <item
+            android:id="@+id/fruits1"
+            android:icon="@drawable/fruit"
+            android:title="الفاكهة" />
+    </group>
+    <group android:checkableBehavior="single"
+        android:id="@+id/g14">
+
+        <item
+            android:id="@+id/vegtables1"
+            android:icon="@drawable/vegetables"
+            android:title="الخضروات" />
+    </group>
+    <group android:checkableBehavior="single"
+        android:id="@+id/g5">
+
+        <item
+            android:id="@+id/vegtables21"
+            android:icon="@drawable/vegetables2"
+            android:title="خضراوات جاهزة" />
+    </group>
+    <group android:checkableBehavior="single"
+        android:id="@+id/g6">
+
+        <item
+            android:id="@+id/offer1"
+            android:icon="@drawable/offer"
+            android:title="العروض" />
+    </group>
+    <group android:checkableBehavior="single"
+        android:id="@+id/g7">
+
+        <item
+            android:id="@+id/cotact1"
+            android:icon="@drawable/call"
+            android:title="تواصل معنا" />
+    </group>
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/language1"
+            android:icon="@drawable/en"
+            android:title="English" />
+        >
+    </group>
+</menu>

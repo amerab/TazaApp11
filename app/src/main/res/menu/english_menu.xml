@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+    <group android:checkableBehavior="single"
+        android:id="@+id/g1">
+        <item
+            android:id="@+id/home"
+            android:icon="@drawable/home"
+            android:title="Home"
+
+            />
+    </group>
+    <group android:checkableBehavior="single"
+        android:id="@+id/g12">
+
+        <item
+            android:id="@+id/about"
+            android:icon="@drawable/about"
+            android:title="About Us"
+            />
+    </group>
+    <group android:checkableBehavior="single"
+        android:id="@+id/g3">
+
+        <item
+            android:id="@+id/fruits"
+            android:icon="@drawable/fruit"
+            android:title="Fruits" />
+    </group>
+    <group android:checkableBehavior="single"
+        android:id="@+id/g14">
+
+        <item
+            android:id="@+id/vegtables"
+            android:icon="@drawable/vegetables"
+            android:title="Vegtables" />
+    </group>
+    <group android:checkableBehavior="single"
+        android:id="@+id/g5">
+
+        <item
+            android:id="@+id/vegtables2"
+            android:icon="@drawable/vegetables2"
+            android:title="Ready Vegtables" />
+    </group>
+    <group android:checkableBehavior="single"
+        android:id="@+id/g6">
+
+        <item
+            android:id="@+id/offer"
+            android:icon="@drawable/offer"
+            android:title="Offers" />
+    </group>
+    <group android:checkableBehavior="single"
+        android:id="@+id/g7">
+
+        <item
+            android:id="@+id/cotact"
+            android:icon="@drawable/call"
+            android:title="Contact Us" />
+    </group>
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/language"
+            android:icon="@drawable/arabic"
+            android:title="العربية" />
+        >
+    </group>
+
+
+
+</menu>
