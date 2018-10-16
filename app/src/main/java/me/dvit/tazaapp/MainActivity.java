@@ -43,7 +43,7 @@ WebView webView;
     }
     public boolean hasActiveInternetConnection(Context context) {
         if (isNetworkAvailable()) {
-            webView.loadUrl("http://tazaegy.ew2s.com");
+            webView.loadUrl("http://tazaegy.ew2s.com/en/mobilesplashar/");
             webView.setBackgroundResource(R.drawable.no_internet_connection);
 
         } else {
@@ -109,7 +109,7 @@ WebView webView;
 
         if (id == R.id.home) {
             if (isNetworkAvailable()) {
-                webView.loadUrl("http://tazaegy.ew2s.com/en/");
+                webView.loadUrl("http://tazaegy.ew2s.com/en/mobilesplashen/");
             } else {
                 webView.setBackgroundColor(0);
                 webView.setBackgroundResource(R.drawable.no_internet_connection);
@@ -176,7 +176,7 @@ WebView webView;
 
                 navigationView.getMenu().clear();
                 navigationView.inflateMenu(R.menu.activity_main_drawer);
-                webView.loadUrl("http://tazaegy.ew2s.com");
+                webView.loadUrl("http://tazaegy.ew2s.com/en/mobilesplashar/");
             } else {
                 navigationView.getMenu().clear();
                 navigationView.inflateMenu(R.menu.english_menu);
@@ -186,7 +186,7 @@ WebView webView;
         }
         else if (id == R.id.home1) {
             if (isNetworkAvailable()) {
-                webView.loadUrl("http://tazaegy.ew2s.com/");
+                webView.loadUrl("http://tazaegy.ew2s.com/en/mobilesplashar/");
 
             } else {
                 webView.setBackgroundColor(0);
