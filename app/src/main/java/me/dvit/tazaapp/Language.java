@@ -23,9 +23,8 @@ public class Language {
 
     public String getLanguage(Context context){
         SharedPreferences  prefs = context.getSharedPreferences(Language_PREFS, MODE_PRIVATE);
-        String language = prefs.getString("language","en");//"No name defined" is the default value.
+        String language = prefs.getString("language","ar");//"No name defined" is the default value.
         setLocale(context ,language);
-
         return language;
     }
     public void setLocale(Context context ,String lang) {

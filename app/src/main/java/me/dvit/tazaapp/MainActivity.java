@@ -2,6 +2,7 @@ package me.dvit.tazaapp;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
@@ -19,12 +20,15 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-WebView webView;
+    WebView webView;
     NavigationView navigationView;
     ActionBarDrawerToggle toggle;
+    Language languageClass = new Language();
+    String Language;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        languageClass.getLanguage(getApplicationContext()); // get language from shared prefs and set it to activity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -35,7 +39,7 @@ WebView webView;
         webView.setHorizontalScrollBarEnabled(false);
         boolean test =  hasActiveInternetConnection(this);
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-         toggle = new ActionBarDrawerToggle(
+        toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
@@ -159,9 +163,21 @@ WebView webView;
             }
         }
         else if (id == R.id.language) {
+            if (checkLanguage().equalsIgnoreCase("en")) {
+                languageClass.setLanguage(webView, "ar");
+                refreshApplication();
+//                ArabicBtn.setText("العربية");
+
+            }
+            else {
+                languageClass.setLanguage(webView, "ar");
+                refreshApplication();
+//                ArabicBtn.setText("English");
+
+            }
             if (isNetworkAvailable()) {
                 navigationView.getMenu().clear();
-                navigationView.inflateMenu(R.menu.activity_main_drawer);
+                //navigationView.inflateMenu(R.menu.activity_main_drawer);
                 webView.loadUrl("http://tazaegy.ew2s.com/en/mobilesplashar/");
             } else {
                 Toast.makeText(this , "Oooops ! You lost your Internet connection please reconnect and try again" , Toast.LENGTH_LONG).show();
@@ -243,5 +259,19 @@ WebView webView;
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    private String checkLanguage() {
+        Language = languageClass.getLanguage(getApplicationContext());
+        return Language;
+    }
+
+    private void refreshApplication() {
+        this.finish();
+        Intent i = new Intent(getApplicationContext(), MainActivity.class);
+//        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+//        i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//        i.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+        startActivity(i);
     }
 }
