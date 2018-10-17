@@ -15,6 +15,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.Toast;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 WebView webView;
@@ -111,16 +113,15 @@ WebView webView;
             if (isNetworkAvailable()) {
                 webView.loadUrl("http://tazaegy.ew2s.com/en/mobilesplashen/");
             } else {
-                webView.setBackgroundColor(0);
-                webView.setBackgroundResource(R.drawable.no_internet_connection);
+                Toast.makeText(this , "Oooops ! You lost your Internet connection please reconnect and try again" , Toast.LENGTH_LONG).show();
+
             }
         }
         else if (id == R.id.about) {
             if (isNetworkAvailable()) {
                 webView.loadUrl("http://tazaegy.ew2s.com/en/about-us/");
             } else {
-                webView.setBackgroundColor(0);
-                webView.setBackgroundResource(R.drawable.no_internet_connection);
+                Toast.makeText(this , "Oooops ! You lost your Internet connection please reconnect and try again" , Toast.LENGTH_LONG).show();
 
             }
 
@@ -129,8 +130,7 @@ WebView webView;
             if (isNetworkAvailable()) {
                 webView.loadUrl("http://tazaegy.ew2s.com/en/fruits/");
             } else {
-                webView.setBackgroundColor(0);
-                webView.setBackgroundResource(R.drawable.no_internet_connection);
+                Toast.makeText(this , "Oooops ! You lost your Internet connection please reconnect and try again" , Toast.LENGTH_LONG).show();
 
             }
 
@@ -139,8 +139,7 @@ WebView webView;
             if (isNetworkAvailable()) {
                 webView.loadUrl("http://tazaegy.ew2s.com/en/vegetables/");
             } else {
-                webView.setBackgroundColor(0);
-                webView.setBackgroundResource(R.drawable.no_internet_connection);
+                Toast.makeText(this , "Oooops ! You lost your Internet connection please reconnect and try again" , Toast.LENGTH_LONG).show();
 
             }
         }
@@ -148,8 +147,7 @@ WebView webView;
             if (isNetworkAvailable()) {
                 webView.loadUrl("http://tazaegy.ew2s.com/en/product-category/vegetables-ready/");
             } else {
-                webView.setBackgroundColor(0);
-                webView.setBackgroundResource(R.drawable.no_internet_connection);
+                Toast.makeText(this , "Oooops ! You lost your Internet connection please reconnect and try again" , Toast.LENGTH_LONG).show();
             }
 
         }
@@ -157,8 +155,7 @@ WebView webView;
             if (isNetworkAvailable()) {
                 webView.loadUrl("http://tazaegy.ew2s.com/en/offer/");
             } else {
-                webView.setBackgroundColor(0);
-                webView.setBackgroundResource(R.drawable.no_internet_connection);
+                Toast.makeText(this , "Oooops ! You lost your Internet connection please reconnect and try again" , Toast.LENGTH_LONG).show();
             }
 
         }
@@ -166,8 +163,7 @@ WebView webView;
             if (isNetworkAvailable()) {
                 webView.loadUrl("http://tazaegy.ew2s.com/en/contact-us/");
             } else {
-                webView.setBackgroundColor(0);
-                webView.setBackgroundResource(R.drawable.no_internet_connection);
+                Toast.makeText(this , "Oooops ! You lost your Internet connection please reconnect and try again" , Toast.LENGTH_LONG).show();
             }
         }
 
@@ -180,8 +176,7 @@ WebView webView;
             } else {
                 navigationView.getMenu().clear();
                 navigationView.inflateMenu(R.menu.english_menu);
-                webView.setBackgroundColor(0);
-                webView.setBackgroundResource(R.drawable.no_internet_connection);
+                Toast.makeText(this , "Oooops ! You lost your Internet connection please reconnect and try again" , Toast.LENGTH_LONG).show();
             }
         }
         else if (id == R.id.home1) {
@@ -189,8 +184,7 @@ WebView webView;
                 webView.loadUrl("http://tazaegy.ew2s.com/en/mobilesplashar/");
 
             } else {
-                webView.setBackgroundColor(0);
-                webView.setBackgroundResource(R.drawable.no_internet_connection);
+                Toast.makeText(this , "Oooops ! You lost your Internet connection please reconnect and try again" , Toast.LENGTH_LONG).show();
             }
         }
         else if (id == R.id.about1) {
@@ -198,8 +192,7 @@ WebView webView;
                 webView.loadUrl("http://tazaegy.ew2s.com/about-us/");
 
             } else {
-                webView.setBackgroundColor(0);
-                webView.setBackgroundResource(R.drawable.no_internet_connection);
+                Toast.makeText(this , "Oooops ! You lost your Internet connection please reconnect and try again" , Toast.LENGTH_LONG).show();
             }
         }
         else if (id == R.id.fruits1) {
@@ -207,8 +200,7 @@ WebView webView;
                 webView.loadUrl("http://tazaegy.ew2s.com/%D8%A7%D9%84%D9%81%D8%A7%D9%83%D9%87%D9%87/");
 
             } else {
-                webView.setBackgroundColor(0);
-                webView.setBackgroundResource(R.drawable.no_internet_connection);
+                Toast.makeText(this , "Oooops ! You lost your Internet connection please reconnect and try again" , Toast.LENGTH_LONG).show();
             }
         }
         else if (id == R.id.vegtables1) {
@@ -216,8 +208,7 @@ WebView webView;
                 webView.loadUrl("http://tazaegy.ew2s.com/%D8%A7%D9%84%D8%AE%D8%B6%D8%B1%D9%88%D8%A7%D8%AA/");
 
             } else {
-                webView.setBackgroundColor(0);
-                webView.setBackgroundResource(R.drawable.no_internet_connection);
+                Toast.makeText(this , "Oooops ! You lost your Internet connection please reconnect and try again" , Toast.LENGTH_LONG).show();
             }
         }
         else if (id == R.id.vegtables21) {
@@ -225,8 +216,8 @@ WebView webView;
                 webView.loadUrl("http://tazaegy.ew2s.com/product-category/%D8%AE%D8%B6%D8%B1%D8%A7%D9%88%D8%A7%D8%AA-%D9%85%D8%B9%D9%84%D8%A8%D8%A9/");
 
             } else {
-                webView.setBackgroundColor(0);
-                webView.setBackgroundResource(R.drawable.no_internet_connection);
+                Toast.makeText(this , "Oooops ! You lost your Internet connection please reconnect and try again" , Toast.LENGTH_LONG).show();
+
             }
         }
         else if (id == R.id.offer1) {
@@ -234,8 +225,8 @@ WebView webView;
                 webView.loadUrl("http://tazaegy.ew2s.com/offer/");
 
             } else {
-                webView.setBackgroundColor(0);
-                webView.setBackgroundResource(R.drawable.no_internet_connection);
+                Toast.makeText(this , "Oooops ! You lost your Internet connection please reconnect and try again" , Toast.LENGTH_LONG).show();
+
             }
         }
         else if (id == R.id.cotact1) {
@@ -243,8 +234,8 @@ WebView webView;
                 webView.loadUrl("http://tazaegy.ew2s.com/contact-us/");
 
             } else {
-                webView.setBackgroundColor(0);
-                webView.setBackgroundResource(R.drawable.no_internet_connection);
+                Toast.makeText(this , "Oooops ! You lost your Internet connection please reconnect and try again" , Toast.LENGTH_LONG).show();
+
             }
         }
         else if (id == R.id.language1) {
@@ -256,8 +247,8 @@ WebView webView;
             } else {
                 navigationView.getMenu().clear();
                 navigationView.inflateMenu(R.menu.activity_main_drawer);
-                webView.setBackgroundColor(0);
-                webView.setBackgroundResource(R.drawable.no_internet_connection);
+                Toast.makeText(this , "Oooops ! You lost your Internet connection please reconnect and try again" , Toast.LENGTH_LONG).show();
+
             }
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
