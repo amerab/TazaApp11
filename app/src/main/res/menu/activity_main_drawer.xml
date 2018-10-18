@@ -14,7 +14,7 @@
 
             />
     </group>
-    <group android:checkableBehavior="single"
+   <group android:checkableBehavior="single"
         android:id="@+id/g12">
 
         <item

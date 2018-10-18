@@ -23,12 +23,12 @@ public class MainActivity extends AppCompatActivity
     WebView webView;
     NavigationView navigationView;
     ActionBarDrawerToggle toggle;
-    Language languageClass = new Language();
-    String Language;
+   // Language languageClass = new Language();
+   // String Language;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        languageClass.getLanguage(getApplicationContext()); // get language from shared prefs and set it to activity
+        //languageClass.getLanguage(getApplicationContext()); // get language from shared prefs and set it to activity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -49,8 +49,7 @@ public class MainActivity extends AppCompatActivity
     }
        public boolean hasActiveInternetConnection(Context context) {
         if (isNetworkAvailable()) {
-            webView.loadUrl("tazaegy.ew2s.com/mobilesplashar/");
-
+            webView.loadUrl("http://tazaegy.ew2s.com/mobilesplashar/");
         } else {
             webView.setBackgroundColor(0);
             webView.setBackgroundResource(R.drawable.no_internet_connection);
@@ -65,7 +64,6 @@ public class MainActivity extends AppCompatActivity
         return activeNetworkInfo != null;
 
     }
-
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -93,9 +91,7 @@ public class MainActivity extends AppCompatActivity
             AlertDialog alert = builder.create();
             alert.show();
         }
-
     }
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
@@ -128,35 +124,35 @@ public class MainActivity extends AppCompatActivity
         }
         else if (id == R.id.fruits) {
             if (isNetworkAvailable()) {
-                webView.loadUrl("http://tazaegy.ew2s.com/en/fruits/");
+                webView.loadUrl("http://tazaegy.ew2s.com/en/fruits-en/");
             } else {
                 Toast.makeText(this , "Oooops ! You lost your Internet connection please reconnect and try again" , Toast.LENGTH_LONG).show();
             }
         }
         else if (id == R.id.vegtables) {
             if (isNetworkAvailable()) {
-                webView.loadUrl("http://tazaegy.ew2s.com/en/vegetables/");
+                webView.loadUrl("http://tazaegy.ew2s.com/en/vegetables-en/");
             } else {
                 Toast.makeText(this , "Oooops ! You lost your Internet connection please reconnect and try again" , Toast.LENGTH_LONG).show();
             }
         }
         else if (id == R.id.vegtables2) {
             if (isNetworkAvailable()) {
-                webView.loadUrl("http://tazaegy.ew2s.com/en/product-category/vegetables-ready/");
+                webView.loadUrl("http://tazaegy.ew2s.com/en/vegetables-ready-en/");
             } else {
                 Toast.makeText(this , "Oooops ! You lost your Internet connection please reconnect and try again" , Toast.LENGTH_LONG).show();
             }
         }
         else if (id == R.id.offer) {
             if (isNetworkAvailable()) {
-                webView.loadUrl("http://tazaegy.ew2s.com/en/offer/");
+                webView.loadUrl("http://tazaegy.ew2s.com/en/offer-en/");
             } else {
                 Toast.makeText(this , "Oooops ! You lost your Internet connection please reconnect and try again" , Toast.LENGTH_LONG).show();
             }
         }
         else if (id == R.id.cotact) {
             if (isNetworkAvailable()) {
-                webView.loadUrl("http://tazaegy.ew2s.com/en/contact-us/");
+                webView.loadUrl("http://tazaegy.ew2s.com/en/contact-en/");
             } else {
                 Toast.makeText(this , "Oooops ! You lost your Internet connection please reconnect and try again" , Toast.LENGTH_LONG).show();
             }
@@ -166,7 +162,7 @@ public class MainActivity extends AppCompatActivity
             if (isNetworkAvailable()) {
                 navigationView.getMenu().clear();
                 navigationView.inflateMenu(R.menu.activity_main_drawer);
-                webView.loadUrl("tazaegy.ew2s.com/mobilesplashar/");
+                webView.loadUrl("http://tazaegy.ew2s.com/mobilesplashar/");
             } else {
                 Toast.makeText(this , "Oooops ! You lost your Internet connection please reconnect and try again" , Toast.LENGTH_LONG).show();
                 navigationView.getMenu().clear();
@@ -176,7 +172,7 @@ public class MainActivity extends AppCompatActivity
         }
         else if (id == R.id.home1) {
             if (isNetworkAvailable()) {
-                webView.loadUrl("tazaegy.ew2s.com/mobilesplashar/");
+                webView.loadUrl("http://tazaegy.ew2s.com/mobilesplashar/");
             } else {
                 Toast.makeText(this , "Oooops ! You lost your Internet connection please reconnect and try again" , Toast.LENGTH_LONG).show();
             }
@@ -191,7 +187,7 @@ public class MainActivity extends AppCompatActivity
         }
         else if (id == R.id.fruits1) {
             if (isNetworkAvailable()) {
-                webView.loadUrl("http://tazaegy.ew2s.com/%D8%A7%D9%84%D9%81%D8%A7%D9%83%D9%87%D9%87/");
+                webView.loadUrl("http://tazaegy.ew2s.com/%D9%81%D8%A7%D9%83%D9%87%D9%87-%D8%B9%D8%B1%D8%A8%D9%8A/");
 
             } else {
                 Toast.makeText(this , "Oooops ! You lost your Internet connection please reconnect and try again" , Toast.LENGTH_LONG).show();
@@ -199,7 +195,7 @@ public class MainActivity extends AppCompatActivity
         }
         else if (id == R.id.vegtables1) {
             if (isNetworkAvailable()) {
-                webView.loadUrl("http://tazaegy.ew2s.com/%D8%A7%D9%84%D8%AE%D8%B6%D8%B1%D9%88%D8%A7%D8%AA/");
+                webView.loadUrl("http://tazaegy.ew2s.com/%D8%AE%D8%B6%D8%B1%D9%88%D8%A7%D8%AA-%D8%B9%D8%B1%D8%A8%D9%8A/");
 
             } else {
                 Toast.makeText(this , "Oooops ! You lost your Internet connection please reconnect and try again" , Toast.LENGTH_LONG).show();
@@ -207,7 +203,7 @@ public class MainActivity extends AppCompatActivity
         }
         else if (id == R.id.vegtables21) {
             if (isNetworkAvailable()) {
-                webView.loadUrl("http://tazaegy.ew2s.com/product-category/%D8%AE%D8%B6%D8%B1%D8%A7%D9%88%D8%A7%D8%AA-%D9%85%D8%B9%D9%84%D8%A8%D8%A9/");
+                webView.loadUrl("http://tazaegy.ew2s.com/%D8%AE%D8%B6%D8%B1%D9%88%D8%A7%D8%AA-%D8%AC-%D8%B9%D8%B1%D8%A8%D9%8A/");
 
             } else {
                 Toast.makeText(this , "Oooops ! You lost your Internet connection please reconnect and try again" , Toast.LENGTH_LONG).show();
@@ -216,7 +212,7 @@ public class MainActivity extends AppCompatActivity
         }
         else if (id == R.id.offer1) {
             if (isNetworkAvailable()) {
-                webView.loadUrl("http://tazaegy.ew2s.com/offer/");
+                webView.loadUrl("http://tazaegy.ew2s.com/%D8%B9%D8%B1%D9%88%D8%B6-%D8%B9%D8%B1%D8%A8%D9%8A/");
 
             } else {
                 Toast.makeText(this , "Oooops ! You lost your Internet connection please reconnect and try again" , Toast.LENGTH_LONG).show();
@@ -225,7 +221,7 @@ public class MainActivity extends AppCompatActivity
         }
         else if (id == R.id.cotact1) {
             if (isNetworkAvailable()) {
-                webView.loadUrl("http://tazaegy.ew2s.com/contact-us/");
+                webView.loadUrl("http://tazaegy.ew2s.com/%D8%AA%D9%88%D8%A7%D8%B5%D9%84-%D8%B9%D8%B1%D8%A8%D9%8A/");
 
             } else {
                 Toast.makeText(this , "Oooops ! You lost your Internet connection please reconnect and try again" , Toast.LENGTH_LONG).show();
@@ -233,7 +229,7 @@ public class MainActivity extends AppCompatActivity
             }
         }
         else if (id == R.id.language1) {
-            if (checkLanguage().equalsIgnoreCase("ar")) {
+          /*  if (checkLanguage().equalsIgnoreCase("ar")) {
                 languageClass.setLanguage(webView, "en");
                 refreshApplication();
 //                ArabicBtn.setText("العربية");
@@ -244,12 +240,11 @@ public class MainActivity extends AppCompatActivity
                 refreshApplication();
 //                ArabicBtn.setText("English");
 
-            }
+            }*/
             if (isNetworkAvailable()) {
-                navigationView.getMenu().clear();
-               //navigationView.inflateMenu(R.menu.english_menu);
                 webView.loadUrl("http://tazaegy.ew2s.com/en/mobilesplashen/");
-
+                navigationView.getMenu().clear();
+               navigationView.inflateMenu(R.menu.english_menu);
             } else {
                 Toast.makeText(this , "Oooops ! You lost your Internet connection please reconnect and try again" , Toast.LENGTH_LONG).show();
                 navigationView.getMenu().clear();
@@ -260,8 +255,7 @@ public class MainActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-
-    private String checkLanguage() {
+   /* private String checkLanguage() {
         Language = languageClass.getLanguage(getApplicationContext());
         return Language;
     }
@@ -269,9 +263,6 @@ public class MainActivity extends AppCompatActivity
     private void refreshApplication() {
         this.finish();
         Intent i = new Intent(getApplicationContext(), MainActivity.class);
-//        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-//        i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-//        i.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
         startActivity(i);
-    }
+    }*/
 }
