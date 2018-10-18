@@ -3,9 +3,12 @@ package me.dvit.tazaapp;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.AlertDialog;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -13,22 +16,30 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Gravity;
 import android.view.MenuItem;
+import android.view.View;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Toast;
+
+import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     WebView webView;
     NavigationView navigationView;
     ActionBarDrawerToggle toggle;
-   // Language languageClass = new Language();
-   // String Language;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
-        //languageClass.getLanguage(getApplicationContext()); // get language from shared prefs and set it to activity
+        Locale locale = new Locale("ar");
+        Locale.setDefault(locale);
+        Configuration config = new Configuration();
+        config.locale = locale;
+        getBaseContext().getResources().updateConfiguration(config,
+                getBaseContext().getResources().getDisplayMetrics());
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -71,7 +82,6 @@ public class MainActivity extends AppCompatActivity
             drawer.closeDrawer(GravityCompat.START);
         } else  if (webView.canGoBack()) {
             webView.goBack();
-
         }
         else
         {
@@ -102,6 +112,7 @@ public class MainActivity extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR1)
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
@@ -158,7 +169,14 @@ public class MainActivity extends AppCompatActivity
             }
         }
         else if (id == R.id.language) {
-
+            DrawerLayout   drawerLayout = (DrawerLayout)findViewById(R.id.drawer_layout);
+            drawerLayout.setLayoutDirection(View.LAYOUT_DIRECTION_RTL);
+            Locale locale2 = new Locale("ar");
+            Locale.setDefault(locale2);
+            Configuration config = new Configuration();
+            config.locale = locale2;
+            getBaseContext().getResources().updateConfiguration(config,
+                    getBaseContext().getResources().getDisplayMetrics());
             if (isNetworkAvailable()) {
                 navigationView.getMenu().clear();
                 navigationView.inflateMenu(R.menu.activity_main_drawer);
@@ -229,18 +247,17 @@ public class MainActivity extends AppCompatActivity
             }
         }
         else if (id == R.id.language1) {
-          /*  if (checkLanguage().equalsIgnoreCase("ar")) {
-                languageClass.setLanguage(webView, "en");
-                refreshApplication();
-//                ArabicBtn.setText("العربية");
-
-            }
-            else {
-                languageClass.setLanguage(webView, "en");
-                refreshApplication();
-//                ArabicBtn.setText("English");
-
-            }*/
+            NavigationView navigationView =(NavigationView)findViewById(R.id.nav_view);
+            navigationView.setLayoutDirection(View.LAYOUT_DIRECTION_LTR);
+            DrawerLayout   drawerLayout = (DrawerLayout)findViewById(R.id.drawer_layout);
+            drawerLayout.setLayoutDirection(View.LAYOUT_DIRECTION_LTR);
+            Locale locale3 = new Locale("en_US");
+            Locale.setDefault(locale3);
+            Configuration config2 = new Configuration();
+            config2.setLayoutDirection(locale3);
+            config2.locale = locale3;
+            getBaseContext().getResources().updateConfiguration(config2,
+                    getBaseContext().getResources().getDisplayMetrics());
             if (isNetworkAvailable()) {
                 webView.loadUrl("http://tazaegy.ew2s.com/en/mobilesplashen/");
                 navigationView.getMenu().clear();
@@ -255,14 +272,5 @@ public class MainActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-   /* private String checkLanguage() {
-        Language = languageClass.getLanguage(getApplicationContext());
-        return Language;
-    }
 
-    private void refreshApplication() {
-        this.finish();
-        Intent i = new Intent(getApplicationContext(), MainActivity.class);
-        startActivity(i);
-    }*/
 }
