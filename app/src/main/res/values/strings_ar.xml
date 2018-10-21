@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="home_ar">الرئيسية</string>
+    <string name="home_ar_url">http://tazaegy.ew2s.com/mobilesplashar/</string>
+    <string name="fruits_ar">الفاكهة</string>
+    <string name="fruits_ar_url">http://tazaegy.ew2s.com/%D9%81%D8%A7%D9%83%D9%87%D9%87-%D8%B9%D8%B1%D8%A8%D9%8A//</string>
+    <string name="vegtables_ar">الخضروات</string>
+    <string name="veg_ar_url">http://tazaegy.ew2s.com/%D8%AE%D8%B6%D8%B1%D9%88%D8%A7%D8%AA-%D8%B9%D8%B1%D8%A8%D9%8A//</string>
+    <string name="ready_vegtables_ar">الخضروات الجاهزة</string>
+    <string name="ready_vegtables_ar_url">http://tazaegy.ew2s.com/%D8%AE%D8%B6%D8%B1%D9%88%D8%A7%D8%AA-%D8%AC-%D8%B9%D8%B1%D8%A8%D9%8A/</string>
+    <string name="offer_ar">العروض</string>
+    <string name="offer_ar_url">http://tazaegy.ew2s.com/%D8%B9%D8%B1%D9%88%D8%B6-%D8%B9%D8%B1%D8%A8%D9%8A/</string>
+    <string name="contact_ar">اتصل بنا</string>
+    <string name="contact_ar_url">http://tazaegy.ew2s.com/%D8%AA%D9%88%D8%A7%D8%B5%D9%84-%D8%B9%D8%B1%D8%A8%D9%8A//</string>
+    <string name="english">الانجليزية</string>
+    <string name="english_url">http://tazaegy.ew2s.com/en/mobilesplashen/</string>
+</resources>

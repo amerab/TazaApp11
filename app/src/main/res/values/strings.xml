@@ -7,4 +7,20 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
     <string name="Application_name">Taza</string>
+    <string name="home">Home</string>
+    <string name="home_url">http://tazaegy.ew2s.com/en/mobilesplashen/</string>
+    <string name="fruits">Fruits</string>
+    <string name="fruits_url">http://tazaegy.ew2s.com/en/fruits-en/</string>
+    <string name="vegtables">Vegtables</string>
+    <string name="veg_url">http://tazaegy.ew2s.com/en/vegetables-en/</string>
+    <string name="ready_vegtables">Ready Vegtables</string>
+    <string name="ready_vegtables_url">http://tazaegy.ew2s.com/en/vegetables-ready-en/</string>
+    <string name="offer">Offers</string>
+    <string name="offer_url">http://tazaegy.ew2s.com/en/offer-en/</string>
+    <string name="contact">Contact Us</string>
+    <string name="contact_url">http://tazaegy.ew2s.com/en/contact-en/</string>
+    <string name="arabic">Arabic</string>
+    <string name="arabic_url">http://tazaegy.ew2s.com/mobilesplashar/</string>
+    <string name="no_internet_text">Oooops ! You lost your Internet connection please reconnect and try again</string>
+
 </resources>

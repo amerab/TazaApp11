@@ -30,16 +30,10 @@ public class MainActivity extends AppCompatActivity
     WebView webView;
     NavigationView navigationView;
     ActionBarDrawerToggle toggle;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
-        Locale locale = new Locale("ar");
-        Locale.setDefault(locale);
-        Configuration config = new Configuration();
-        config.locale = locale;
-        getBaseContext().getResources().updateConfiguration(config,
-                getBaseContext().getResources().getDisplayMetrics());
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -116,156 +110,125 @@ public class MainActivity extends AppCompatActivity
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
+
         int id = item.getItemId();
         if (id == R.id.home) {
             if (isNetworkAvailable()) {
-                webView.loadUrl("http://tazaegy.ew2s.com/en/mobilesplashen/");
+                webView.loadUrl(String.valueOf(R.string.home_url));
             } else {
-                Toast.makeText(this , "Oooops ! You lost your Internet connection please reconnect and try again" , Toast.LENGTH_LONG).show();
+                Toast.makeText(this , R.string.no_internet_text , Toast.LENGTH_LONG).show();
+            }
+        }
 
-            }
-        }
-        else if (id == R.id.about) {
-            if (isNetworkAvailable()) {
-                webView.loadUrl("http://tazaegy.ew2s.com/en/about-us/");
-            } else {
-                Toast.makeText(this , "Oooops ! You lost your Internet connection please reconnect and try again" , Toast.LENGTH_LONG).show();
-            }
-        }
         else if (id == R.id.fruits) {
             if (isNetworkAvailable()) {
-                webView.loadUrl("http://tazaegy.ew2s.com/en/fruits-en/");
+                webView.loadUrl(String.valueOf(R.string.fruits_url));
             } else {
-                Toast.makeText(this , "Oooops ! You lost your Internet connection please reconnect and try again" , Toast.LENGTH_LONG).show();
+                Toast.makeText(this ,  R.string.no_internet_text  , Toast.LENGTH_LONG).show();
             }
         }
         else if (id == R.id.vegtables) {
             if (isNetworkAvailable()) {
-                webView.loadUrl("http://tazaegy.ew2s.com/en/vegetables-en/");
+                webView.loadUrl(String.valueOf(R.string.veg_url));
             } else {
-                Toast.makeText(this , "Oooops ! You lost your Internet connection please reconnect and try again" , Toast.LENGTH_LONG).show();
+                Toast.makeText(this ,  R.string.no_internet_text  , Toast.LENGTH_LONG).show();
             }
         }
         else if (id == R.id.vegtables2) {
             if (isNetworkAvailable()) {
-                webView.loadUrl("http://tazaegy.ew2s.com/en/vegetables-ready-en/");
+                webView.loadUrl(String.valueOf(R.string.ready_vegtables_url));
             } else {
-                Toast.makeText(this , "Oooops ! You lost your Internet connection please reconnect and try again" , Toast.LENGTH_LONG).show();
+                Toast.makeText(this ,  R.string.no_internet_text  , Toast.LENGTH_LONG).show();
             }
         }
         else if (id == R.id.offer) {
             if (isNetworkAvailable()) {
-                webView.loadUrl("http://tazaegy.ew2s.com/en/offer-en/");
+                webView.loadUrl(String.valueOf(R.string.offer_url));
             } else {
-                Toast.makeText(this , "Oooops ! You lost your Internet connection please reconnect and try again" , Toast.LENGTH_LONG).show();
+                Toast.makeText(this ,  R.string.no_internet_text  , Toast.LENGTH_LONG).show();
             }
         }
         else if (id == R.id.cotact) {
             if (isNetworkAvailable()) {
-                webView.loadUrl("http://tazaegy.ew2s.com/en/contact-en/");
+                webView.loadUrl(String.valueOf(R.string.contact_url));
             } else {
-                Toast.makeText(this , "Oooops ! You lost your Internet connection please reconnect and try again" , Toast.LENGTH_LONG).show();
+                Toast.makeText(this ,  R.string.no_internet_text , Toast.LENGTH_LONG).show();
             }
         }
         else if (id == R.id.language) {
-            DrawerLayout   drawerLayout = (DrawerLayout)findViewById(R.id.drawer_layout);
-            drawerLayout.setLayoutDirection(View.LAYOUT_DIRECTION_RTL);
-            Locale locale2 = new Locale("ar");
-            Locale.setDefault(locale2);
-            Configuration config = new Configuration();
-            config.locale = locale2;
-            getBaseContext().getResources().updateConfiguration(config,
-                    getBaseContext().getResources().getDisplayMetrics());
             if (isNetworkAvailable()) {
-                navigationView.getMenu().clear();
-                navigationView.inflateMenu(R.menu.activity_main_drawer);
-                webView.loadUrl("http://tazaegy.ew2s.com/mobilesplashar/");
+               // navigationView.getMenu().clear();
+              //  navigationView.inflateMenu(R.menu.activity_main_drawer);
+                webView.loadUrl(String.valueOf(R.string.home_ar_url));
             } else {
-                Toast.makeText(this , "Oooops ! You lost your Internet connection please reconnect and try again" , Toast.LENGTH_LONG).show();
-                navigationView.getMenu().clear();
-                navigationView.inflateMenu(R.menu.activity_main_drawer);
+                Toast.makeText(this ,  R.string.no_internet_text  , Toast.LENGTH_LONG).show();
+              //  navigationView.getMenu().clear();
+             //   navigationView.inflateMenu(R.menu.activity_main_drawer);
 
             }
         }
-        else if (id == R.id.home1) {
+        else if (id == R.id.home_ar) {
             if (isNetworkAvailable()) {
-                webView.loadUrl("http://tazaegy.ew2s.com/mobilesplashar/");
+                webView.loadUrl(String.valueOf(R.string.home_ar_url));
             } else {
-                Toast.makeText(this , "Oooops ! You lost your Internet connection please reconnect and try again" , Toast.LENGTH_LONG).show();
+                Toast.makeText(this ,  R.string.no_internet_text  , Toast.LENGTH_LONG).show();
             }
         }
-        else if (id == R.id.about1) {
+
+
+        else if (id == R.id.fruits_ar1) {
             if (isNetworkAvailable()) {
-                webView.loadUrl("http://tazaegy.ew2s.com/about-us/");
+                webView.loadUrl(String.valueOf(R.string.fruits_ar_url));
 
             } else {
-                Toast.makeText(this , "Oooops ! You lost your Internet connection please reconnect and try again" , Toast.LENGTH_LONG).show();
+                Toast.makeText(this ,  R.string.no_internet_text  , Toast.LENGTH_LONG).show();
             }
         }
-        else if (id == R.id.fruits1) {
+        else if (id == R.id.vegtables_ar) {
             if (isNetworkAvailable()) {
-                webView.loadUrl("http://tazaegy.ew2s.com/%D9%81%D8%A7%D9%83%D9%87%D9%87-%D8%B9%D8%B1%D8%A8%D9%8A/");
+                webView.loadUrl(String.valueOf(R.string.veg_ar_url));
 
             } else {
-                Toast.makeText(this , "Oooops ! You lost your Internet connection please reconnect and try again" , Toast.LENGTH_LONG).show();
+                Toast.makeText(this ,  R.string.no_internet_text  , Toast.LENGTH_LONG).show();
             }
         }
-        else if (id == R.id.vegtables1) {
+        else if (id == R.id.ready_vegtables_ar) {
             if (isNetworkAvailable()) {
-                webView.loadUrl("http://tazaegy.ew2s.com/%D8%AE%D8%B6%D8%B1%D9%88%D8%A7%D8%AA-%D8%B9%D8%B1%D8%A8%D9%8A/");
+                webView.loadUrl(String.valueOf(R.string.ready_vegtables_ar_url));
 
             } else {
-                Toast.makeText(this , "Oooops ! You lost your Internet connection please reconnect and try again" , Toast.LENGTH_LONG).show();
-            }
-        }
-        else if (id == R.id.vegtables21) {
-            if (isNetworkAvailable()) {
-                webView.loadUrl("http://tazaegy.ew2s.com/%D8%AE%D8%B6%D8%B1%D9%88%D8%A7%D8%AA-%D8%AC-%D8%B9%D8%B1%D8%A8%D9%8A/");
-
-            } else {
-                Toast.makeText(this , "Oooops ! You lost your Internet connection please reconnect and try again" , Toast.LENGTH_LONG).show();
+                Toast.makeText(this ,  R.string.no_internet_text  , Toast.LENGTH_LONG).show();
 
             }
         }
-        else if (id == R.id.offer1) {
+        else if (id == R.id.offer_ar) {
             if (isNetworkAvailable()) {
-                webView.loadUrl("http://tazaegy.ew2s.com/%D8%B9%D8%B1%D9%88%D8%B6-%D8%B9%D8%B1%D8%A8%D9%8A/");
+                webView.loadUrl(String.valueOf(R.string.offer_ar_url));
 
             } else {
-                Toast.makeText(this , "Oooops ! You lost your Internet connection please reconnect and try again" , Toast.LENGTH_LONG).show();
+                Toast.makeText(this ,  R.string.no_internet_text  , Toast.LENGTH_LONG).show();
 
             }
         }
-        else if (id == R.id.cotact1) {
+        else if (id == R.id.contact_ar) {
             if (isNetworkAvailable()) {
-                webView.loadUrl("http://tazaegy.ew2s.com/%D8%AA%D9%88%D8%A7%D8%B5%D9%84-%D8%B9%D8%B1%D8%A8%D9%8A/");
+                webView.loadUrl(String.valueOf(R.string.contact_ar_url));
 
             } else {
-                Toast.makeText(this , "Oooops ! You lost your Internet connection please reconnect and try again" , Toast.LENGTH_LONG).show();
+                Toast.makeText(this ,  R.string.no_internet_text  , Toast.LENGTH_LONG).show();
 
             }
         }
-        else if (id == R.id.language1) {
-            NavigationView navigationView =(NavigationView)findViewById(R.id.nav_view);
-            navigationView.setLayoutDirection(View.LAYOUT_DIRECTION_LTR);
-            DrawerLayout   drawerLayout = (DrawerLayout)findViewById(R.id.drawer_layout);
-            drawerLayout.setLayoutDirection(View.LAYOUT_DIRECTION_LTR);
-            Locale locale3 = new Locale("en_US");
-            Locale.setDefault(locale3);
-            Configuration config2 = new Configuration();
-            config2.setLayoutDirection(locale3);
-            config2.locale = locale3;
-            getBaseContext().getResources().updateConfiguration(config2,
-                    getBaseContext().getResources().getDisplayMetrics());
+        else if (id == R.id.english) {
+
             if (isNetworkAvailable()) {
-                webView.loadUrl("http://tazaegy.ew2s.com/en/mobilesplashen/");
-                navigationView.getMenu().clear();
-               navigationView.inflateMenu(R.menu.english_menu);
+                webView.loadUrl(String.valueOf(R.string.home_url));
+               //avigationView.getMenu().clear();
+               //navigationView.inflateMenu(R.menu.english_menu);
             } else {
-                Toast.makeText(this , "Oooops ! You lost your Internet connection please reconnect and try again" , Toast.LENGTH_LONG).show();
-                navigationView.getMenu().clear();
-                navigationView.inflateMenu(R.menu.english_menu);
+                Toast.makeText(this ,  R.string.no_internet_text  , Toast.LENGTH_LONG).show();
+               // navigationView.getMenu().clear();
+               // navigationView.inflateMenu(R.menu.english_menu);
             }
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

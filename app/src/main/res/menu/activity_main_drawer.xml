@@ -3,75 +3,107 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view"
-
     >
     <group android:checkableBehavior="single"
         android:id="@+id/g1"
         >
         <item
-            android:title="الرئيسية"
-            android:id="@+id/home1"
+            android:title="@string/home_ar"
+            android:id="@+id/home_ar"
             android:icon="@drawable/home"
-
-
-            />
-    </group>
-   <group android:checkableBehavior="single"
-        android:id="@+id/g12">
-
-        <item
-            android:id="@+id/about1"
-            android:icon="@drawable/about"
-            android:title="من نحن"
             />
     </group>
     <group android:checkableBehavior="single"
-        android:id="@+id/g3">
-
+        android:id="@+id/g2">
         <item
-            android:id="@+id/fruits1"
+            android:id="@+id/fruits_ar1"
             android:icon="@drawable/fruit"
-            android:title="الفاكهة" />
+            android:title="@string/fruits_ar" />
+    </group>
+    <group android:checkableBehavior="single"
+        android:id="@+id/gve">
+        <item
+            android:id="@+id/vegtables_ar"
+            android:icon="@drawable/vegetables"
+            android:title="@string/vegtables_ar" />
+    </group>
+    <group android:checkableBehavior="single"
+        android:id="@+id/gar5">
+        <item
+            android:id="@+id/ready_vegtables_ar"
+            android:icon="@drawable/vegetables2"
+            android:title="@string/ready_vegtables_ar" />
+    </group>
+    <group android:checkableBehavior="single"
+        android:id="@+id/gar6">
+        <item
+            android:id="@+id/offer_ar"
+            android:icon="@drawable/offer"
+            android:title="@string/offer_ar" />
+    </group>
+    <group android:checkableBehavior="single"
+        android:id="@+id/gar7">
+        <item
+            android:id="@+id/contact_ar"
+            android:icon="@drawable/call"
+            android:title="@string/contact_ar" />
+    </group>
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/english"
+            android:icon="@drawable/en"
+            android:title="@string/english" />
+        >
+    </group>
+    <group android:checkableBehavior="single"
+        android:id="@+id/gen">
+        <item
+            android:id="@+id/home"
+            android:icon="@drawable/home"
+            android:title="@string/home"
+            />
+    </group>
+    <group android:checkableBehavior="single"
+        android:id="@+id/gen2">
+        <item
+            android:id="@+id/fruits"
+            android:icon="@drawable/fruit"
+            android:title="@string/fruits" />
     </group>
     <group android:checkableBehavior="single"
         android:id="@+id/g14">
 
         <item
-            android:id="@+id/vegtables1"
+            android:id="@+id/vegtables"
             android:icon="@drawable/vegetables"
-            android:title="الخضروات" />
+            android:title="@string/vegtables" />
     </group>
     <group android:checkableBehavior="single"
         android:id="@+id/g5">
-
         <item
-            android:id="@+id/vegtables21"
+            android:id="@+id/ready_vegtables"
             android:icon="@drawable/vegetables2"
-            android:title="خضراوات جاهزة" />
+            android:title="@string/ready_vegtables" />
     </group>
     <group android:checkableBehavior="single"
         android:id="@+id/g6">
-
         <item
-            android:id="@+id/offer1"
+            android:id="@+id/offer"
             android:icon="@drawable/offer"
-            android:title="العروض" />
+            android:title="@string/offer" />
     </group>
     <group android:checkableBehavior="single"
         android:id="@+id/g7">
-
         <item
-            android:id="@+id/cotact1"
+            android:id="@+id/cotact"
             android:icon="@drawable/call"
-            android:title="تواصل معنا" />
+            android:title="@string/contact" />
     </group>
-
     <group android:checkableBehavior="single">
-
         <item
-            android:id="@+id/language1"
-            android:icon="@drawable/en"
-            android:title="English" />
+            android:id="@+id/arabic"
+            android:icon="@drawable/arabic"
+            android:title="@string/arabic" />
         >
     </group>
 </menu>
