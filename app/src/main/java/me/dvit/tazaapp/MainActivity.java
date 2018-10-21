@@ -30,10 +30,12 @@ public class MainActivity extends AppCompatActivity
     WebView webView;
     NavigationView navigationView;
     ActionBarDrawerToggle toggle;
-
+    Language languageClass = new Language();
+    String Language;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        languageClass.getLanguage(getApplicationContext()); // get language from shared prefs and set it to activity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -134,7 +136,7 @@ public class MainActivity extends AppCompatActivity
                 Toast.makeText(this ,  R.string.no_internet_text  , Toast.LENGTH_LONG).show();
             }
         }
-        else if (id == R.id.vegtables2) {
+        else if (id == R.id.ready_vegtables) {
             if (isNetworkAvailable()) {
                 webView.loadUrl(String.valueOf(R.string.ready_vegtables_url));
             } else {
@@ -155,15 +157,22 @@ public class MainActivity extends AppCompatActivity
                 Toast.makeText(this ,  R.string.no_internet_text , Toast.LENGTH_LONG).show();
             }
         }
-        else if (id == R.id.language) {
+        else if (id == R.id.arabic) {
+            if (checkLanguage().equalsIgnoreCase("en")) {
+                languageClass.setLanguage(webView, "ar");
+                refreshApplication();
+            } else {
+                languageClass.setLanguage(webView, "en");
+                refreshApplication();
+            }
             if (isNetworkAvailable()) {
-               // navigationView.getMenu().clear();
-              //  navigationView.inflateMenu(R.menu.activity_main_drawer);
+               navigationView.getMenu().clear();
+               navigationView.inflateMenu(R.menu.activity_main_drawer);
                 webView.loadUrl(String.valueOf(R.string.home_ar_url));
             } else {
                 Toast.makeText(this ,  R.string.no_internet_text  , Toast.LENGTH_LONG).show();
-              //  navigationView.getMenu().clear();
-             //   navigationView.inflateMenu(R.menu.activity_main_drawer);
+               navigationView.getMenu().clear();
+               navigationView.inflateMenu(R.menu.activity_main_drawer);
 
             }
         }
@@ -174,7 +183,6 @@ public class MainActivity extends AppCompatActivity
                 Toast.makeText(this ,  R.string.no_internet_text  , Toast.LENGTH_LONG).show();
             }
         }
-
 
         else if (id == R.id.fruits_ar1) {
             if (isNetworkAvailable()) {
@@ -220,20 +228,35 @@ public class MainActivity extends AppCompatActivity
             }
         }
         else if (id == R.id.english) {
+            if (checkLanguage().equalsIgnoreCase("ar")) {
+                languageClass.setLanguage(webView, "en");
+                navigationView.getMenu().clear();
+                navigationView.inflateMenu(R.menu.english_menu);
+                refreshApplication();
+            } else {
+                languageClass.setLanguage(webView, "ar");
+                refreshApplication();
 
+            }
             if (isNetworkAvailable()) {
                 webView.loadUrl(String.valueOf(R.string.home_url));
-               //avigationView.getMenu().clear();
-               //navigationView.inflateMenu(R.menu.english_menu);
             } else {
                 Toast.makeText(this ,  R.string.no_internet_text  , Toast.LENGTH_LONG).show();
-               // navigationView.getMenu().clear();
-               // navigationView.inflateMenu(R.menu.english_menu);
+               navigationView.getMenu().clear();
+               navigationView.inflateMenu(R.menu.english_menu);
             }
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-
+    private String checkLanguage() {
+        Language = languageClass.getLanguage(getApplicationContext());
+        return Language;
+    }
+    private void refreshApplication() {
+        this.finish();
+        Intent i = new Intent(getApplicationContext(), MainActivity.class);
+        startActivity(i);
+    }
 }
