@@ -4,55 +4,56 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view"
     >
+
     <group android:checkableBehavior="single"
-        android:id="@+id/g1"
-        >
+        android:id="@+id/gen">
         <item
-            android:title="@string/home_ar"
-            android:id="@+id/home_ar"
+            android:id="@+id/home"
             android:icon="@drawable/home"
+            android:title="@string/home"
             />
     </group>
     <group android:checkableBehavior="single"
-        android:id="@+id/g2">
+        android:id="@+id/gen2">
         <item
-            android:id="@+id/fruits_ar1"
+            android:id="@+id/fruits"
             android:icon="@drawable/fruit"
-            android:title="@string/fruits_ar" />
+            android:title="@string/fruits" />
     </group>
     <group android:checkableBehavior="single"
-        android:id="@+id/gve">
+        android:id="@+id/g14">
+
         <item
-            android:id="@+id/vegtables_ar"
+            android:id="@+id/vegtables"
             android:icon="@drawable/vegetables"
-            android:title="@string/vegtables_ar" />
+            android:title="@string/vegtables" />
     </group>
     <group android:checkableBehavior="single"
-        android:id="@+id/gar5">
+        android:id="@+id/g5">
         <item
-            android:id="@+id/ready_vegtables_ar"
+            android:id="@+id/ready_vegtables"
             android:icon="@drawable/vegetables2"
-            android:title="@string/ready_vegtables_ar" />
+            android:title="@string/ready_vegtables" />
     </group>
     <group android:checkableBehavior="single"
-        android:id="@+id/gar6">
+        android:id="@+id/g6">
         <item
-            android:id="@+id/offer_ar"
+            android:id="@+id/offer"
             android:icon="@drawable/offer"
-            android:title="@string/offer_ar" />
+            android:title="@string/offer" />
     </group>
     <group android:checkableBehavior="single"
-        android:id="@+id/gar7">
+        android:id="@+id/g7">
         <item
-            android:id="@+id/contact_ar"
+            android:id="@+id/cotact"
             android:icon="@drawable/call"
-            android:title="@string/contact_ar" />
+            android:title="@string/contact" />
     </group>
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/english"
-            android:icon="@drawable/en"
-            android:title="@string/english" />
+            android:id="@+id/arabic"
+            android:icon="@drawable/switcher"
+            android:title="@string/arabic" />
         >
     </group>
 
